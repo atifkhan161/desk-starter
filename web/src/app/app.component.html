@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav *ngIf="_authenticated" class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="/">{{ 'Brand' | translate }}</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
@@ -10,7 +10,7 @@
     </div>
   </div>
 </nav>
-<ng-sidebar-container class="msb-container">
+<ng-sidebar-container *ngIf="_authenticated" class="msb-container">
 
   <!-- A sidebar -->
   <ng-sidebar [(opened)]="_opened" mode="slide" [dock]="_docked" dockedSize="55px">
@@ -46,3 +46,4 @@
   </div>
 
 </ng-sidebar-container>
+<router-outlet *ngIf="!_authenticated"></router-outlet>

@@ -15,6 +15,7 @@ export class AppComponent {
     console.log('APP_CONFIG', APP_CONFIG);
   }
 
+  _authenticated: boolean = false;
   _opened: boolean = true;
   _docked: boolean = true;
 
